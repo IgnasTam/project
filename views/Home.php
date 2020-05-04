@@ -1,3 +1,6 @@
+<?php
+require_once 'bootstrap.php';
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -31,16 +34,21 @@
 
         <div id ="new_programing" class="row forumModule" style="display: none">
             <div>
-                <form class="col-lg-12">
+                <form action="addprograming.php" method ="POST" class="col-lg-12">
                     <div class="form-group">
-                        <label for="title">Title</label>
-                        <input type="text" class="form-control" id="title" placeholder="Title" name = "newDiscussionTitle">
+                        <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name = "title1">
+                            <option selected>Choose...</option>
+                            <option value="1">HTML</option>
+                            <option value="2">CSS</option>
+                            <option value="3">Java script</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="text">Text</label>
-                        <textarea class="form-control" id="text" rows="10" name = "newDiscussionText"></textarea>
+                        <textarea class="form-control" id="text" rows="10" name = "text1"></textarea>
                     </div>
-                    <a  class="btn btn-primary themeButton btn_s" href="#">Add</a>
+                    <button type="submit" class="btn btn-primary mx-auto my-2" name="submit">Comment</button>
                 </form>
             </div>
         </div>
@@ -106,16 +114,21 @@
     </div>
     <div id ="new_countries" class="row forumModule" style="display: none">
         <div>
-            <form class="col-lg-12">
+            <form action="addcountries.php" method="POST" class="col-lg-12">
                 <div class="form-group">
-                    <label for="title">Title</label>
-                    <input type="text" class="form-control" id="title" placeholder="Title" name = "newDiscussionTitle">
+                    <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name = "title2">
+                        <option selected>Choose...</option>
+                        <option value="1">Europa</option>
+                        <option value="2">Azija</option>
+                        <option value="3">Amerika</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="text">Text</label>
-                    <textarea class="form-control" id="text" rows="10" name = "newDiscussionText"></textarea>
+                    <textarea class="form-control" id="text" rows="10" name = "text2"></textarea>
                 </div>
-                <a class="btn btn-primary themeButton btn_s" href="#">Add</a>
+        <button type="submit" class="btn btn-primary mx-auto my-2" name="submit">Comment</button>
             </form>
         </div>
     </div>
@@ -172,6 +185,27 @@
     </div>
 </div>
 </div>
+<?php
+$comments = getComments();
+
+foreach ($comments as $fetch):
+?>
+<div class="card bg-light ml-4 mb-3 pl-2" style="max-width: 60rem;">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-2" class="border bottom" style=" height: 10rem;">
+                <img src="https://img.icons8.com/color/96/000000/mime.png" class="img-thumbnail"/>
+            </div>
+            <div class="col-md-10">
+                <span class="text-primary font-weight-bold"><?php echo $fetch['title1'] ?></span> made a post
+                <br>
+                <?php echo $fetch['time'] ?>
+            </div>
+        </div>
+        <div class="ml-1"><?php echo $fetch['text1'] ?></div>
+    </div>
+</div>
+<?php endforeach; ?>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="http://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
 <script src = "../src/forum.js" type="text/javascript"></script>
