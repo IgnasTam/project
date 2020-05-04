@@ -1,3 +1,3 @@
-document.querySelector('#add-employee').addEventListener('click', function() {
-	document.querySelector('#new-employee form').submit();
-});
+// document.querySelector('#add-employee').addEventListener('click', function() {
+// 	document.querySelector('#new-employee form').submit();
+// });

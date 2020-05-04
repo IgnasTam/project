@@ -1,5 +1,7 @@
 <?php
-
+$servername = 'localhost';
+$username = 'root';
+$password = '';
 $conn = new mysqli($servername, $username, $password);
 // Check connection
 if ($conn->connect_error) {
@@ -7,7 +9,7 @@ if ($conn->connect_error) {
 }
 
 // Create database
-$sql = "CREATE DATABASE myDB";
+$sql = "CREATE DATABASE account";
 if ($conn->query($sql) === TRUE) {
     echo "Database created successfully";
 } else {
