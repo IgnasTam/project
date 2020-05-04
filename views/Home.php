@@ -18,7 +18,7 @@ require_once 'bootstrap.php';
     <div class="row">
         <div class="col-lg-12">
             <a href="Home.php">Home</a> <i class="fa fa-chevron-circle-right paginationarrow"></i>
-            <a class = "pullRight" href = "../src/index.php?logout='1'" style = "color: red;">Logout</a>
+            <a class = "pullRight" href = "index.php?logout='1'" style = "color: red;">Logout</a>
         </div>
     </div>
         <div class="row forumModule">
