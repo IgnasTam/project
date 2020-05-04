@@ -1,6 +1,6 @@
 <?php
 // Saving data from form in text file in JSON format
-
+require_once 'bootstrap.php';
 // check if all form data are submited, else output error message
 if (isset($_POST['title2']) && isset($_POST['text2'])) {
     // if form fields are empty, outputs message, else, gets their data
@@ -44,4 +44,4 @@ if (isset($_POST['title2']) && isset($_POST['text2'])) {
 } else {
     echo 'Form fields not submited';
 }
-header('location:insertCountries.php');
+header('location:Home.php');

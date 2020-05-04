@@ -18,7 +18,7 @@ require_once 'bootstrap.php';
     <div class="row">
         <div class="col-lg-12">
             <a href="Home.php">Home</a> <i class="fa fa-chevron-circle-right paginationarrow"></i>
-            <a class = "pullRight" href = "index.php?logout='1'" style = "color: red;">Logout</a>
+            <a class = "pullRight" href = "../src/index.php?logout='1'" style = "color: red;">Logout</a>
         </div>
     </div>
         <div class="row forumModule">
@@ -69,32 +69,10 @@ require_once 'bootstrap.php';
                     </thead>
                     <tr>
                         <td>
-                            <a href="#">HTML</a>
+                            <a href="http://project/views/programingComs.php">HTML</a>
                         </td>
                         <td>
                             <a href="#">Benediktas</a>
-                        </td>
-                        <td class="pullRight">
-                            27
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a href="#">CSS</a>
-                        </td>
-                        <td>
-                            <a href="#">Jonas</a>
-                        </td>
-                        <td class="pullRight">
-                            27
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a href="#">Java script</a>
-                        </td>
-                        <td>
-                            <a href="#">Ponas</a>
                         </td>
                         <td class="pullRight">
                             27
@@ -147,32 +125,10 @@ require_once 'bootstrap.php';
         </thead>
         <tr>
             <td>
-                <a href="#">Europa</a>
+                <a href="http://project/views/countrieComs.php">Europa</a>
             </td>
             <td>
                 <a href="#">Benjaminas</a>
-            </td>
-            <td class="pullRight">
-                27
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <a href="#">Azija</a>
-            </td>
-            <td>
-                <a href="#">Antanas</a>
-            </td>
-            <td class="pullRight">
-                27
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <a href="#">Amerika</a>
-            </td>
-            <td>
-                <a href="#">Petras</a>
             </td>
             <td class="pullRight">
                 27
@@ -185,29 +141,8 @@ require_once 'bootstrap.php';
     </div>
 </div>
 </div>
-<?php
-$comments = getComments();
-
-foreach ($comments as $fetch):
-?>
-<div class="card bg-light ml-4 mb-3 pl-2" style="max-width: 60rem;">
-    <div class="card-body">
-        <div class="row">
-            <div class="col-md-2" class="border bottom" style=" height: 10rem;">
-                <img src="https://img.icons8.com/color/96/000000/mime.png" class="img-thumbnail"/>
-            </div>
-            <div class="col-md-10">
-                <span class="text-primary font-weight-bold"><?php echo $fetch['title1'] ?></span> made a post
-                <br>
-                <?php echo $fetch['time'] ?>
-            </div>
-        </div>
-        <div class="ml-1"><?php echo $fetch['text1'] ?></div>
-    </div>
-</div>
-<?php endforeach; ?>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="http://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
-<script src = "../src/forum.js" type="text/javascript"></script>
+<script src = "forum.js" type="text/javascript"></script>
 </body>
 </html>

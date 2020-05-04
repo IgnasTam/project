@@ -1,7 +1,7 @@
 <?php
 // Saving data from form in text file in JSON format
 require_once 'bootstrap.php';
-// check if all form data are submited, else output error message
+// check if all form data re submited, else output error message
 if (isset($_POST['title1']) && isset($_POST['text1'])) {
     // if form fields are empty, outputs message, else, gets their data
     if (empty($_POST['title1']) || empty($_POST['text1'])) {
@@ -44,4 +44,4 @@ if (isset($_POST['title1']) && isset($_POST['text1'])) {
 } else {
     echo 'Form fields not submited';
 }
-header('location:Home.php');
+header('location:programingComs.php');
