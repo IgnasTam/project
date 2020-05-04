@@ -1,4 +1,8 @@
-<?php include('server.php')?>
+<?php
+define('ROOT_PATH', dirname(dirname(__FILE__)));
+$path = ROOT_PATH . '/src/server.php';
+include ($path);
+?>
 <!doctype html>
 <html lang="en">
 <head>

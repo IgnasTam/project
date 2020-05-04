@@ -4,7 +4,7 @@ $username = "";
 $email = "";
 $errors = array();
 
-$db = mysqli_connect('localhost', 'root','', 'registration');
+$db = mysqli_connect('localhost:3308', 'root','', 'registration');
 
 if (isset($_POST['register'])) {
     $username = mysqli_real_escape_string($db, $_POST['username']);
@@ -31,7 +31,7 @@ if (isset($_POST['register'])) {
         mysqli_query($db, $sql);
         $_SESSION['username'] = $username;
         $_SESSION['success'] = "You are now logged in";
-        header('location: index.php');
+        header('location: Home.php');
     }
 }
 
@@ -42,18 +42,18 @@ if (isset($_POST['login'])) {
     if(empty($username)) {
         array_push($errors, "Username is required");
     }
-    if(empty($email)) {
+    if(empty($password_1)) {
         array_push($errors, "Password required");
     }
 
     if (count($errors) == 0) {
-        $password = md5($password);
+        $password = md5($password_1);
         $query = "SELECT * FROM users WHERE username = '$username' AND password ='$password'";
         $result = mysqli_query($db, $query);
         if(mysqli_num_rows($result) == 1) {
             $_SESSION['username'] = $username;
             $_SESSION['success'] = "You are now logged in";
-            header('location: index.php');
+            header('location: Home.php');
         }else{
             array_push($errors,"The username/password is incorrect");
         }
